@@ -21,7 +21,7 @@ BuildRequires:	automake
 BuildRequires:	apache-devel
 BuildRequires:	apr-devel
 BuildRequires:	apr-util-devel
-BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 apache2 mod_ngobjweb adaptor (for OpenGroupware.org) .

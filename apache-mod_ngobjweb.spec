@@ -4,35 +4,30 @@
 
 
 Summary:	mod_ngobjweb apache module
+Summary(pl):	Modu³ Apacha mod_ngobjweb
 Name:		sope-mod_ngobjweb
 Version:	3.15
 Release:	1
 Vendor:		OpenGroupware.org
 License:	LGPL
-
 Group:		Development/Libraries
-#AutoReqProv:	off
 Requires:	ogo-environment
 Requires:	apache >= 2.0.40
 Source0:	http://download.opengroupware.org/sources/trunk/sope-mod_ngobjweb-trunk-latest.tar.gz
-#Patch:
 URL:		http://www.softwarestudio.org/libical
-
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 Requires: 	apache >= 2.0.40
-
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	apache-devel
 BuildRequires:	apr-devel
 BuildRequires:	apr-util-devel
+BuildRoot:      %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 apache2 mod_ngobjweb adaptor (for OpenGroupware.org) .
 Enables apache to handle HTTP requests for the SOPE application server
 
-%description
+%description -l pl
 Modu³ adaptera ngobjweb (dla OpenGroupware.org).
 Enables apache to handle HTTP requests for the SOPE application server
 

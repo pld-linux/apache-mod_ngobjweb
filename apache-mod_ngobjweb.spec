@@ -19,7 +19,7 @@ Vendor:		OpenGroupware.org
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://download.opengroupware.org/nightly/sources/trunk/%{sopename}-trunk-%{version}-%{datenightly}.tar.gz	
-# Source0-md5:	
+# Source0-md5:	8f5ffde2db954a7722cd9e3597370e71
 Patch0:		%{name}-makefile.patch
 URL:		http://www.softwarestudio.org/libical
 Requires: 	apache >= 2.0.40

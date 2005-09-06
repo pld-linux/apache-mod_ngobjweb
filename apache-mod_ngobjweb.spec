@@ -2,20 +2,25 @@
 # - mv SPECS/{apache-mod-ngobjweb.spec,apache-mod_ngobjweb.spec},v (if it's apache module)
 # - why Name and install dir is sope-* ???
 # - strange /var/*/*.so and /usr/local paths in generated OGo.conf
+# - OGo.conf link to %{_sysconfdir}/httpd/httpd.conf/@XX_Ogo.conf
 
 %define		mod_ngobjweb_makeflags		-v
 %define		sope_version			4.3
 %define		opengroupware.org_version	1.0a
+%define		datenightly			200508311705
+%define		sopename			sope-mod_ngobjweb
 
 Summary:	mod_ngobjweb apache module
 Summary(pl):	Modu³ Apacha mod_ngobjweb
-Name:		sope-mod_ngobjweb
-Version:	3.15
-Release:	1
+Name:		apache-mod_ngobjweb
+Version:	r1098
+Release:	0.1
 Vendor:		OpenGroupware.org
 License:	LGPL
 Group:		Development/Libraries
-Source0:	http://download.opengroupware.org/sources/trunk/sope-mod_ngobjweb-trunk-latest.tar.gz
+Source0:	http://download.opengroupware.org/nightly/sources/trunk/%{sopename}-trunk-%{version}-%{datenightly}.tar.gz	
+# Source0-md5:	
+Patch0:		%{name}-makefile.patch
 URL:		http://www.softwarestudio.org/libical
 Requires: 	apache >= 2.0.40
 BuildRequires:	autoconf
@@ -36,16 +41,16 @@ Modu³ adaptera ngobjweb (dla OpenGroupware.org). Pozwala serwerowi
 Apache obs³ugiwaæ ¿±dania HTTP dla serwera aplikacji SOPE.
 
 %prep
-%setup -n sope-mod_ngobjweb
+%setup -q -n sope-mod_ngobjweb
+%patch0 -p1
 
 %build
-. /usr/lib/GNUstep/System/Library/Makefiles/GNUstep.sh
+. %{_libdir}/GNUstep/System/Library/Makefiles/GNUstep.sh
 export PATH=$PATH:%{_sbindir}
-%{__make} %{mod_ngobjweb_makeflags} \
+%{__make} \
 	apxs=/usr/sbin/apxs \
-	HTTPD=/usr/sbin/httpd \
-	APXS_INCLUDE_DIRS="-I%{_includedir}/apr -I%{_includedir}/apr-util -I%{_includedir}/apache"
-
+	HTTPD=/usr/sbin/httpd
+	
 %install
 rm -rf $RPM_BUILD_ROOT
 export PATH=$PATH:%{_sbindir}
@@ -90,6 +95,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/httpd/httpd.conf/88_OGo.conf
+#%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/httpd/httpd.conf/88_OGo.conf
 %attr(755,root,root) %{_libdir}/sope-%{sope_version}/mod_ngobjweb.so
 %config(noreplace) %verify(not md5 mtime size) %{_var}/lib/opengroupware.org/OGo.conf

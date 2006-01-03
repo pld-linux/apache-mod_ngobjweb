@@ -1,5 +1,3 @@
-# TODO:
-# - mv SPECS/{apache-mod-ngobjweb.spec,apache-mod_ngobjweb.spec},v
 %define		mod_ngobjweb_makeflags		-v
 %define		sope_version			4.3
 %define		opengroupware.org_version	1.0a

@@ -1,11 +1,13 @@
---- sope-mod_ngobjweb/GNUmakefile.old	2005-08-08 06:15:29.000000000 +0200
-+++ sope-mod_ngobjweb/GNUmakefile	2005-09-05 00:22:05.000000000 +0200
-@@ -56,7 +56,7 @@
- LD            = gcc
+diff -uNr sope-mod_ngobjweb.orig/GNUmakefile sope-mod_ngobjweb/GNUmakefile
+--- sope-mod_ngobjweb.orig/GNUmakefile	2006-01-23 11:02:45.000000000 +0100
++++ sope-mod_ngobjweb/GNUmakefile	2006-01-23 18:23:45.000000000 +0100
+@@ -78,7 +78,8 @@
  SHARED_LIBEXT = .so
  
--CFLAGS  = -Wall -I. -fPIC $(APXS_CFLAGS) $(APXS_INCLUDE_DIRS)
-+CFLAGS  = -Wall -D_LARGEFILE64_SOURCE -I. -I/usr/include/apr -I/usr/include/apr-util -I/usr/include/apache -fPIC $(APXS_CFLAGS) $(APXS_INCLUDE_DIRS)
+ CFLAGS  = -Wall -I. -fPIC \
+-	$(APXS_CFLAGS) $(APXS_INCLUDE_DIRS) $(APR_INCLUDE_DIRS)
++	$(APXS_CFLAGS) $(APXS_INCLUDE_DIRS) $(APR_INCLUDE_DIRS) \
++	-D_LARGEFILE64_SOURCE -I. -I/usr/include/apr -I/usr/include/apr-util -I/usr/include/apache
+ 
  LDFLAGS = $(APXS_LDFLAGS) -shared -fPIC
  
- # adaptor

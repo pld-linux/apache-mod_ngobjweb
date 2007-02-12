@@ -6,7 +6,7 @@
 %define 	apxs		/usr/sbin/apxs
 %define		mod_name	ngobjweb
 Summary:	mod_ngobjweb Apache module
-Summary(pl):	Modu³ Apacha mod_ngobjweb
+Summary(pl.UTF-8):   ModuÅ‚ Apacha mod_ngobjweb
 Name:		apache-mod_%{mod_name}
 Version:	r1203  
 Release:	0.1
@@ -34,9 +34,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 apache2 mod_ngobjweb adaptor (for OpenGroupware.org). Enables Apache
 to handle HTTP requests for the SOPE application server.
 
-%description -l pl
-Modu³ adaptera ngobjweb (dla OpenGroupware.org). Pozwala serwerowi
-Apache obs³ugiwaæ ¿±dania HTTP dla serwera aplikacji SOPE.
+%description -l pl.UTF-8
+ModuÅ‚ adaptera ngobjweb (dla OpenGroupware.org). Pozwala serwerowi
+Apache obsÅ‚ugiwaÄ‡ Å¼Ä…dania HTTP dla serwera aplikacji SOPE.
 
 %prep
 %setup -q -n sope-mod_ngobjweb

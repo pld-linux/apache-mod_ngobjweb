@@ -6,7 +6,7 @@
 %define 	apxs		/usr/sbin/apxs
 %define		mod_name	ngobjweb
 Summary:	mod_ngobjweb Apache module
-Summary(pl.UTF-8):   Moduł Apacha mod_ngobjweb
+Summary(pl.UTF-8):	Moduł Apacha mod_ngobjweb
 Name:		apache-mod_%{mod_name}
 Version:	r1203  
 Release:	0.1

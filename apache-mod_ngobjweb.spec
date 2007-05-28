@@ -1,20 +1,20 @@
 %define		mod_ngobjweb_makeflags		-v
 %define		sope_version			4.5
 %define		opengroupware.org_version	1.1
-%define		datenightly			200601231102
+%define		datenightly			200705151102
 %define		sopename			sope-mod_ngobjweb
 %define 	apxs		/usr/sbin/apxs
 %define		mod_name	ngobjweb
 Summary:	mod_ngobjweb Apache module
 Summary(pl.UTF-8):	Moduł Apacha mod_ngobjweb
 Name:		apache-mod_%{mod_name}
-Version:	r1203  
+Version:	r1479  
 Release:	0.1
 Vendor:		OpenGroupware.org
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://download.opengroupware.org/nightly/sources/trunk/%{sopename}-trunk-%{version}-%{datenightly}.tar.gz
-# Source0-md5:	7fba15c6f4a8ae86de057eb25e08a331
+# Source0-md5:	c684437dba5548687fcbb39cf17fd8e8
 Source1:	%{name}.conf
 Patch0:		%{name}-makefile.patch
 URL:		http://www.softwarestudio.org/libical
@@ -43,7 +43,7 @@ Apache obsługiwać żądania HTTP dla serwera aplikacji SOPE.
 %patch0 -p1
 
 %build
-. %{_libdir}/GNUstep/System/Library/Makefiles/GNUstep.sh
+#. %{_libdir}/GNUstep/System/Library/Makefiles/GNUstep.sh
 %{__make} \
 	CC="%{__cc}" \
 	LD="%{__cc}" \

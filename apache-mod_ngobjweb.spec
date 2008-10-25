@@ -12,7 +12,7 @@ Version:	r1479
 Release:	0.1
 Vendor:		OpenGroupware.org
 License:	LGPL
-Group:		Development/Libraries
+Group:		Networking/Daemons/HTTP
 Source0:	http://download.opengroupware.org/nightly/sources/trunk/%{sopename}-trunk-%{version}-%{datenightly}.tar.gz
 # Source0-md5:	c684437dba5548687fcbb39cf17fd8e8
 Source1:	%{name}.conf
